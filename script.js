@@ -64,9 +64,3 @@ showSlide(0);
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   startAutoplay();
 }
-
-document.querySelector("#contact-form").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const status = event.currentTarget.querySelector(".form-status");
-  status.textContent = "תודה! הטופס מוכן לחיבור לשירות שליחת ההודעות שלכם.";
-});

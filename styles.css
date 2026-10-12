@@ -241,9 +241,7 @@ button:hover {
 .button:focus-visible,
 button:focus-visible,
 a:focus-visible,
-summary:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
+summary:focus-visible {
   outline: 3px solid var(--plum);
   outline-offset: 3px;
 }
@@ -421,15 +419,72 @@ textarea:focus-visible {
   background: var(--blush);
 }
 
+.contact-card {
+  padding: 42px clamp(22px, 6vw, 70px);
+  border: 1px solid rgba(96, 99, 78, 0.16);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.52);
+  box-shadow: 0 16px 42px rgba(75, 72, 63, 0.08);
+}
+
 .contact-intro {
   text-align: center;
 }
 
 .contact-intro h2 {
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   color: var(--olive);
   font-size: clamp(27px, 3.2vw, 39px);
   line-height: 1.25;
+}
+
+.contact-copy {
+  margin: 0 0 24px;
+  color: var(--ink);
+  font-size: 20px;
+}
+
+.contact-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.contact-whatsapp,
+.contact-phone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 11px 22px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contact-whatsapp {
+  background: #25d366;
+  color: var(--white);
+  box-shadow: 0 8px 20px rgba(22, 78, 43, 0.18);
+}
+
+.contact-whatsapp:hover {
+  background: #20bd5a;
+  transform: translateY(-2px);
+}
+
+.contact-phone {
+  border: 1px solid var(--olive);
+  color: var(--olive);
+}
+
+.contact-phone:hover {
+  background: var(--olive);
+  color: var(--white);
 }
 
 .socials {
@@ -451,50 +506,6 @@ textarea:focus-visible {
   width: 29px;
   height: 29px;
   fill: var(--white);
-}
-
-.contact-form {
-  display: grid;
-  gap: 10px;
-}
-
-.field-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.contact-form label {
-  display: block;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  border: 1px solid #d9d7cf;
-  border-radius: 10px;
-  background: var(--white);
-  color: var(--olive);
-  font: 400 18px/1.4 "Assistant", Arial, sans-serif;
-  padding: 12px 14px;
-}
-
-.contact-form textarea {
-  resize: vertical;
-}
-
-.contact-form button {
-  width: 100%;
-  border-radius: 8px;
-  background: var(--olive);
-  font-weight: 700;
-}
-
-.form-status {
-  min-height: 1.7em;
-  margin: 0;
-  color: var(--olive-dark);
-  text-align: center;
 }
 
 .whatsapp-float {
@@ -654,12 +665,9 @@ textarea:focus-visible {
     padding: 38px 0;
   }
 
-  .contact .split {
-    gap: 32px;
-  }
-
-  .field-row {
-    grid-template-columns: 1fr;
+  .contact-card {
+    width: calc(100% - 32px);
+    padding: 30px 18px;
   }
 
   .whatsapp-float {
